@@ -3,155 +3,406 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>For My Babu ♡</title>
+
+<title>100 Reasons Why I Love You ♡</title>
+
 <style>
-  * { box-sizing: border-box; }
-  body {
-    margin: 0;
-    min-height: 100vh;
-    font-family: Georgia, "Times New Roman", serif;
-    background: #faf8f5;
-    color: #4f4a46;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    overflow-x: hidden;
-  }
-  .wrap { width: min(92%, 520px); text-align: center; }
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: Georgia, "Times New Roman", serif;
+  background: #f8f4f1;
+  color: #514944;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.container {
+  width: 100%;
+  max-width: 600px;
+}
+
+.card {
+  background: rgba(255,255,255,0.9);
+  border: 1px solid #e7ddd7;
+  border-radius: 25px;
+  padding: 40px 30px;
+  text-align: center;
+  box-shadow: 0 12px 35px rgba(80,65,55,0.08);
+}
+
+h1 {
+  font-size: 30px;
+  font-weight: 500;
+  margin: 0 0 10px;
+}
+
+.subtitle {
+  color: #9b8c84;
+  font-size: 15px;
+  margin-bottom: 35px;
+}
+
+.heart {
+  font-size: 25px;
+  color: #b9a095;
+  margin-bottom: 12px;
+}
+
+.reason-number {
+  font-size: 12px;
+  letter-spacing: 2px;
+  color: #a4958d;
+  margin-bottom: 20px;
+}
+
+textarea {
+  width: 100%;
+  min-height: 140px;
+  resize: vertical;
+  border: 1px solid #e1d6d0;
+  border-radius: 16px;
+  background: #fffdfb;
+  padding: 18px;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 17px;
+  line-height: 1.6;
+  color: #514944;
+  outline: none;
+}
+
+textarea:focus {
+  border-color: #c9b6ac;
+}
+
+textarea::placeholder {
+  color: #b8ada7;
+}
+
+.buttons {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 18px;
+}
+
+button {
+  border: none;
+  border-radius: 14px;
+  padding: 12px 23px;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.back {
+  background: #eee6e1;
+  color: #716760;
+}
+
+.next {
+  background: #b9a197;
+  color: white;
+}
+
+button:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.counter {
+  margin-top: 15px;
+  font-size: 12px;
+  color: #a39892;
+}
+
+.saved {
+  margin-top: 10px;
+  font-size: 12px;
+  color: #a28e84;
+  min-height: 16px;
+}
+
+.line {
+  width: 45px;
+  height: 1px;
+  background: #ded3cd;
+  margin: 25px auto;
+}
+
+.footer {
+  margin-top: 25px;
+  font-size: 12px;
+  color: #b0a49e;
+}
+
+.final {
+  font-size: 18px;
+  line-height: 1.8;
+}
+
+.hidden {
+  display: none;
+}
+
+@media (max-width: 480px) {
   .card {
-    background: rgba(255,255,255,.88);
-    border: 1px solid #e9e2dc;
-    border-radius: 24px;
-    padding: 34px 25px;
-    box-shadow: 0 12px 35px rgba(80,65,55,.08);
+    padding: 32px 20px;
   }
-  h1 { font-size: 30px; font-weight: 500; margin: 0 0 10px; }
-  .sub { color:#8b827b; font-size: 15px; line-height:1.6; }
-  input {
-    width: 100%; padding: 13px 15px; margin: 20px 0 10px;
-    border: 1px solid #ddd4cc; border-radius: 13px;
-    outline: none; font-size: 15px; text-align:center;
-    background:#fffdfa;
+
+  h1 {
+    font-size: 26px;
   }
-  button {
-    border: 0; border-radius: 13px; padding: 12px 20px;
-    background:#6e655e; color:white; font-size:14px;
-    cursor:pointer;
-  }
-  button:hover { opacity:.9; }
-  .hidden { display:none; }
-  .reason {
-    min-height: 180px; display:flex; flex-direction:column;
-    align-items:center; justify-content:center;
-  }
-  .num { color:#a49a92; font-size:13px; letter-spacing:1px; margin-bottom:15px; }
-  .line {
-    width:45px; height:1px; background:#d8d0ca; margin:17px auto;
-  }
-  .reasonText {
-    color:#514b46; font-size:20px; line-height:1.65;
-    min-height:70px; white-space:pre-wrap;
-  }
+
   textarea {
-    width:100%; height:95px; resize:vertical; margin-top:12px;
-    border:1px solid #ddd4cc; border-radius:12px; padding:12px;
-    font-family:inherit; font-size:15px; background:#fffdfa; outline:none;
+    font-size: 16px;
   }
-  .controls { display:flex; gap:9px; justify-content:center; margin-top:18px; }
-  .secondary { background:#e9e3de; color:#5b544e; }
-  .final { font-size:21px; line-height:1.7; }
-  .signature { margin-top:22px; color:#8c8178; font-style:italic; }
-  .tiny { font-size:12px; color:#aaa19a; margin-top:18px; }
+}
 </style>
 </head>
+
 <body>
-<div class="wrap">
 
-  <div class="card" id="lock">
-    <div style="font-size:25px;margin-bottom:12px;">♡</div>
-    <h1>For My Babu</h1>
-    <div class="sub">A little something made just for you.<br>Only you are supposed to open this.</div>
-    <input id="password" type="password" placeholder="enter our secret ♡">
-    <button onclick="unlock()">Open</button>
-    <div id="error" class="tiny hidden">Hmm… that's not the secret ♡</div>
-  </div>
+<div class="container">
 
-  <div class="card hidden" id="book">
+  <!-- MAIN BOOK -->
+  <div class="card" id="book">
+
+    <div class="heart">♡</div>
+
     <h1>100 reasons why I love you</h1>
-    <div class="sub">from Mabby, with love ♡</div>
+
+    <div class="subtitle">
+      from Mabby, with love ♡
+    </div>
+
+    <div class="reason-number" id="reasonNumber">
+      REASON 01 OF 100
+    </div>
+
     <div class="line"></div>
 
-    <div class="reason">
-      <div class="num" id="number">REASON 01 OF 100</div>
-      <div class="reasonText" id="display"></div>
-      <textarea id="edit" placeholder="Write your reason here..."></textarea>
+    <textarea
+      id="reasonInput"
+      placeholder="Write your reason here..."
+    ></textarea>
+
+    <div class="saved" id="savedMessage"></div>
+
+    <div class="buttons">
+
+      <button
+        class="back"
+        id="backButton"
+        onclick="previousReason()">
+        ← Back
+      </button>
+
+      <button
+        class="next"
+        onclick="nextReason()">
+        Next →
+      </button>
+
     </div>
 
-    <div class="controls">
-      <button class="secondary" onclick="prevReason()">← Back</button>
-      <button onclick="nextReason()" id="next">Next →</button>
+    <div class="counter" id="counter">
+      1 / 100
     </div>
-    <div class="tiny">Your answers stay in this page while it is open.</div>
+
+    <div class="footer">
+      Take your time. You don't have to finish everything today. ♡
+    </div>
+
   </div>
 
-  <div class="card hidden" id="finish">
-    <div style="font-size:28px;margin-bottom:12px;">♡</div>
+
+  <!-- FINAL PAGE -->
+
+  <div class="card hidden" id="finalPage">
+
+    <div class="heart">♡</div>
+
     <div class="final">
-      You made it to 100. ♡<br><br>
-      And honestly, I could probably write a hundred more.
+
+      <h1>That's all 100. ♡</h1>
+
+      <div class="line"></div>
+
+      <p>
+        But honestly...
+      </p>
+
+      <p>
+        I could probably write a hundred more.
+      </p>
+
+      <p>
+        Thank you for being you, Babu.
+      </p>
+
+      <p>
+        With love,<br>
+        <strong>Mabby</strong> ♡
+      </p>
+
     </div>
-    <div class="signature">Love, Mabby</div>
+
   </div>
+
 </div>
 
+
 <script>
-  // CHANGE THIS to the password you want him to use.
-  const SECRET = "babu";
 
-  const reasons = Array.from({length:100}, (_,i) => "");
-  let current = 0;
+/* -------------------------------------------------
+   SETTINGS
+------------------------------------------------- */
 
-  function unlock() {
-    if (document.getElementById("password").value === SECRET) {
-      document.getElementById("lock").classList.add("hidden");
-      document.getElementById("book").classList.remove("hidden");
-      showReason();
-    } else {
-      document.getElementById("error").classList.remove("hidden");
-    }
+const TOTAL_REASONS = 100;
+
+/*
+   This is where your reasons are stored.
+
+   localStorage means the reasons stay saved
+   even after you close and reopen the website.
+*/
+
+const STORAGE_KEY = "mabby_100_reasons";
+
+
+/* -------------------------------------------------
+   LOAD SAVED REASONS
+------------------------------------------------- */
+
+let reasons = JSON.parse(
+  localStorage.getItem(STORAGE_KEY)
+) || Array(TOTAL_REASONS).fill("");
+
+let currentReason = 0;
+
+
+/* -------------------------------------------------
+   ELEMENTS
+------------------------------------------------- */
+
+const input = document.getElementById("reasonInput");
+const numberText = document.getElementById("reasonNumber");
+const counter = document.getElementById("counter");
+const savedMessage = document.getElementById("savedMessage");
+const backButton = document.getElementById("backButton");
+
+
+/* -------------------------------------------------
+   SHOW CURRENT REASON
+------------------------------------------------- */
+
+function showReason() {
+
+  numberText.textContent =
+    "REASON " +
+    String(currentReason + 1).padStart(2, "0") +
+    " OF 100";
+
+  counter.textContent =
+    (currentReason + 1) + " / 100";
+
+  input.value = reasons[currentReason];
+
+  savedMessage.textContent = "";
+
+  backButton.disabled = currentReason === 0;
+}
+
+
+/* -------------------------------------------------
+   SAVE CURRENT REASON
+------------------------------------------------- */
+
+function saveCurrentReason() {
+
+  reasons[currentReason] = input.value;
+
+  localStorage.setItem(
+    STORAGE_KEY,
+    JSON.stringify(reasons)
+  );
+
+  savedMessage.textContent = "Saved ♡";
+
+}
+
+
+/* -------------------------------------------------
+   AUTO-SAVE WHILE TYPING
+------------------------------------------------- */
+
+input.addEventListener("input", function() {
+
+  saveCurrentReason();
+
+});
+
+
+/* -------------------------------------------------
+   NEXT
+------------------------------------------------- */
+
+function nextReason() {
+
+  saveCurrentReason();
+
+  if (currentReason < TOTAL_REASONS - 1) {
+
+    currentReason++;
+
+    showReason();
+
+  } else {
+
+    document.getElementById("book")
+      .classList.add("hidden");
+
+    document.getElementById("finalPage")
+      .classList.remove("hidden");
+
   }
 
-  function showReason() {
-    document.getElementById("number").textContent =
-      `REASON ${String(current+1).padStart(2,"0")} OF 100`;
-    document.getElementById("display").textContent =
-      reasons[current] || "♡";
-    document.getElementById("edit").value = reasons[current];
-    document.getElementById("next").textContent =
-      current === 99 ? "Finish ♡" : "Next →";
+}
+
+
+/* -------------------------------------------------
+   BACK
+------------------------------------------------- */
+
+function previousReason() {
+
+  saveCurrentReason();
+
+  if (currentReason > 0) {
+
+    currentReason--;
+
+    showReason();
+
   }
 
-  document.getElementById("edit").addEventListener("input", e => {
-    reasons[current] = e.target.value;
-    document.getElementById("display").textContent = e.target.value || "♡";
-  });
+}
 
-  function nextReason() {
-    if (current < 99) {
-      current++;
-      showReason();
-    } else {
-      document.getElementById("book").classList.add("hidden");
-      document.getElementById("finish").classList.remove("hidden");
-    }
-  }
 
-  function prevReason() {
-    if (current > 0) {
-      current--;
-      showReason();
-    }
-  }
+/* -------------------------------------------------
+   START
+------------------------------------------------- */
+
+showReason();
+
 </script>
+
 </body>
 </html>
