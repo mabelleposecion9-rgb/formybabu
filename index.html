@@ -366,4 +366,330 @@ textarea:focus {
       onclick="editNext()"
     >
       Next →
-    </
+    </button>
+
+  </div>
+
+  <div class="counter" id="editCounter">
+    1 / 100
+  </div>
+
+  <div class="editNotice">
+    Your reasons save automatically ♡
+  </div>
+
+</div>
+
+
+
+<!-- =========================
+     FINAL PAGE
+========================= -->
+
+<div class="card hidden" id="finalPage">
+
+  <div class="heart">♡</div>
+
+  <div class="finalText">
+
+    <h1>That's all 100. ♡</h1>
+
+    <div class="line"></div>
+
+    <p>
+      But I could probably write<br>
+      a hundred more.
+    </p>
+
+    <p>
+      Thank you for being you, Baby.
+    </p>
+
+    <p>
+      <strong>Mabby</strong> ♡
+    </p>
+
+  </div>
+
+</div>
+
+
+</div>
+
+
+
+<script>
+
+/* =====================================================
+   SETTINGS
+===================================================== */
+
+const PASSWORD = "I love you";
+
+const TOTAL_REASONS = 100;
+
+const STORAGE_KEY = "mabby_100_reasons";
+
+
+/* =====================================================
+   LOAD SAVED REASONS
+===================================================== */
+
+let reasons =
+  JSON.parse(localStorage.getItem(STORAGE_KEY))
+  || Array(TOTAL_REASONS).fill("");
+
+
+
+/* =====================================================
+   CURRENT REASON
+===================================================== */
+
+let currentReason = 0;
+
+
+
+/* =====================================================
+   PASSWORD
+===================================================== */
+
+function checkPassword() {
+
+  const entered =
+    document.getElementById("passwordInput").value;
+
+  if (entered === PASSWORD) {
+
+    document
+      .getElementById("passwordScreen")
+      .classList.add("hidden");
+
+    /*
+      NORMAL LINK = VIEW MODE
+    */
+
+    if (window.location.hash === "#mabby-edit") {
+
+      document
+        .getElementById("editMode")
+        .classList.remove("hidden");
+
+      showEditReason();
+
+    } else {
+
+      document
+        .getElementById("viewMode")
+        .classList.remove("hidden");
+
+      showViewReason();
+
+    }
+
+  } else {
+
+    document
+      .getElementById("passwordError")
+      .textContent =
+      "That's not it, Baby ♡";
+
+  }
+
+}
+
+
+
+/* =====================================================
+   EDIT MODE
+===================================================== */
+
+function showEditReason() {
+
+  document.getElementById("editNumber")
+    .textContent =
+    "REASON " +
+    String(currentReason + 1).padStart(2,"0") +
+    " OF 100";
+
+  document.getElementById("editCounter")
+    .textContent =
+    (currentReason + 1) + " / 100";
+
+  document.getElementById("reasonInput")
+    .value =
+    reasons[currentReason];
+
+  document.getElementById("savedMessage")
+    .textContent = "";
+
+  document.getElementById("editBack")
+    .disabled =
+    currentReason === 0;
+
+}
+
+
+
+function saveReason() {
+
+  reasons[currentReason] =
+    document.getElementById("reasonInput").value;
+
+  localStorage.setItem(
+    STORAGE_KEY,
+    JSON.stringify(reasons)
+  );
+
+  document.getElementById("savedMessage")
+    .textContent = "Saved ♡";
+
+}
+
+
+
+document
+  .getElementById("reasonInput")
+  .addEventListener("input", saveReason);
+
+
+
+function editNext() {
+
+  saveReason();
+
+  if (currentReason < TOTAL_REASONS - 1) {
+
+    currentReason++;
+
+    showEditReason();
+
+  } else {
+
+    alert(
+      "You've reached Reason #100 ♡"
+    );
+
+  }
+
+}
+
+
+
+function editPrevious() {
+
+  saveReason();
+
+  if (currentReason > 0) {
+
+    currentReason--;
+
+    showEditReason();
+
+  }
+
+}
+
+
+
+/* =====================================================
+   VIEW MODE
+===================================================== */
+
+function showViewReason() {
+
+  const text = reasons[currentReason];
+
+  document.getElementById("viewNumber")
+    .textContent =
+    "REASON " +
+    String(currentReason + 1).padStart(2,"0") +
+    " OF 100";
+
+  document.getElementById("viewCounter")
+    .textContent =
+    (currentReason + 1) + " / 100";
+
+  /*
+     If Mabby hasn't written the reason yet,
+     show a gentle message.
+  */
+
+  if (text.trim() === "") {
+
+    document.getElementById("viewReason")
+      .textContent =
+      "This reason is still being written... ♡";
+
+  } else {
+
+    document.getElementById("viewReason")
+      .textContent = text;
+
+  }
+
+  document.getElementById("viewBack")
+    .disabled =
+    currentReason === 0;
+
+}
+
+
+
+function viewNext() {
+
+  if (currentReason < TOTAL_REASONS - 1) {
+
+    currentReason++;
+
+    showViewReason();
+
+  } else {
+
+    document
+      .getElementById("viewMode")
+      .classList.add("hidden");
+
+    document
+      .getElementById("finalPage")
+      .classList.remove("hidden");
+
+  }
+
+}
+
+
+
+function viewPrevious() {
+
+  if (currentReason > 0) {
+
+    currentReason--;
+
+    showViewReason();
+
+  }
+
+}
+
+
+
+/* =====================================================
+   PASSWORD ENTER KEY
+===================================================== */
+
+document
+  .getElementById("passwordInput")
+  .addEventListener("keydown", function(event) {
+
+    if (event.key === "Enter") {
+
+      checkPassword();
+
+    }
+
+  });
+
+</script>
+
+</body>
+</html>
