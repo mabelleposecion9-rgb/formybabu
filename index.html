@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>100 Reasons Why I Love You ♡</title>
+<title>For My Baby ♡</title>
 
 <style>
 * {
@@ -14,13 +14,15 @@
 body {
   margin: 0;
   min-height: 100vh;
-  font-family: Georgia, "Times New Roman", serif;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
   background: #f8f4f1;
   color: #514944;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 20px;
+
+  font-family: Georgia, "Times New Roman", serif;
 }
 
 .container {
@@ -29,16 +31,28 @@ body {
 }
 
 .card {
-  background: rgba(255,255,255,0.9);
+  background: rgba(255,255,255,0.92);
   border: 1px solid #e7ddd7;
   border-radius: 25px;
-  padding: 40px 30px;
+  padding: 38px 28px;
   text-align: center;
-  box-shadow: 0 12px 35px rgba(80,65,55,0.08);
+
+  box-shadow:
+    0 12px 35px rgba(80,65,55,0.08);
+}
+
+.hidden {
+  display: none;
+}
+
+.heart {
+  font-size: 30px;
+  color: #b9a095;
+  margin-bottom: 12px;
 }
 
 h1 {
-  font-size: 30px;
+  font-size: 29px;
   font-weight: 500;
   margin: 0 0 10px;
 }
@@ -46,59 +60,128 @@ h1 {
 .subtitle {
   color: #9b8c84;
   font-size: 15px;
-  margin-bottom: 35px;
-}
-
-.heart {
-  font-size: 25px;
-  color: #b9a095;
-  margin-bottom: 12px;
-}
-
-.reason-number {
-  font-size: 12px;
-  letter-spacing: 2px;
-  color: #a4958d;
-  margin-bottom: 20px;
-}
-
-textarea {
-  width: 100%;
-  min-height: 140px;
-  resize: vertical;
-  border: 1px solid #e1d6d0;
-  border-radius: 16px;
-  background: #fffdfb;
-  padding: 18px;
-  font-family: Georgia, "Times New Roman", serif;
-  font-size: 17px;
   line-height: 1.6;
-  color: #514944;
+}
+
+input {
+  width: 100%;
+  margin-top: 25px;
+  padding: 14px 16px;
+
+  border: 1px solid #ded2cb;
+  border-radius: 14px;
+
+  background: #fffdfb;
+
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 15px;
+
+  text-align: center;
   outline: none;
 }
 
-textarea:focus {
-  border-color: #c9b6ac;
-}
-
-textarea::placeholder {
-  color: #b8ada7;
-}
-
-.buttons {
-  display: flex;
-  justify-content: center;
-  gap: 12px;
-  margin-top: 18px;
+input:focus {
+  border-color: #bfaea5;
 }
 
 button {
   border: none;
   border-radius: 14px;
-  padding: 12px 23px;
+
+  padding: 12px 22px;
+
   font-family: Georgia, "Times New Roman", serif;
   font-size: 14px;
+
   cursor: pointer;
+}
+
+.openButton {
+  margin-top: 12px;
+  background: #b9a197;
+  color: white;
+}
+
+.error {
+  min-height: 18px;
+  margin-top: 10px;
+
+  color: #a46f6f;
+  font-size: 12px;
+}
+
+.reasonNumber {
+  font-size: 12px;
+  letter-spacing: 2px;
+  color: #a4958d;
+
+  margin-top: 8px;
+  margin-bottom: 18px;
+}
+
+.line {
+  width: 45px;
+  height: 1px;
+
+  background: #ded3cd;
+
+  margin: 20px auto;
+}
+
+.reasonText {
+  min-height: 160px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 10px;
+
+  font-size: 19px;
+  line-height: 1.7;
+}
+
+textarea {
+  width: 100%;
+  min-height: 150px;
+
+  resize: vertical;
+
+  padding: 17px;
+
+  border: 1px solid #ded2cb;
+  border-radius: 16px;
+
+  background: #fffdfb;
+
+  color: #514944;
+
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 17px;
+  line-height: 1.6;
+
+  outline: none;
+}
+
+textarea:focus {
+  border-color: #bfaea5;
+}
+
+.saved {
+  height: 18px;
+
+  margin-top: 8px;
+
+  color: #a28e84;
+  font-size: 12px;
+}
+
+.buttons {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+
+  margin-top: 15px;
 }
 
 .back {
@@ -111,47 +194,38 @@ button {
   color: white;
 }
 
-button:disabled {
-  opacity: 0.4;
-  cursor: not-allowed;
-}
-
 .counter {
-  margin-top: 15px;
-  font-size: 12px;
+  margin-top: 14px;
+
   color: #a39892;
-}
-
-.saved {
-  margin-top: 10px;
   font-size: 12px;
-  color: #a28e84;
-  min-height: 16px;
-}
-
-.line {
-  width: 45px;
-  height: 1px;
-  background: #ded3cd;
-  margin: 25px auto;
 }
 
 .footer {
   margin-top: 25px;
-  font-size: 12px;
+
   color: #b0a49e;
+  font-size: 12px;
 }
 
-.final {
+.finalText {
   font-size: 18px;
   line-height: 1.8;
 }
 
-.hidden {
-  display: none;
+.finalText strong {
+  font-weight: 500;
+}
+
+.editNotice {
+  margin-top: 15px;
+
+  color: #a39892;
+  font-size: 11px;
 }
 
 @media (max-width: 480px) {
+
   .card {
     padding: 32px 20px;
   }
@@ -160,249 +234,136 @@ button:disabled {
     font-size: 26px;
   }
 
-  textarea {
-    font-size: 16px;
+  .reasonText {
+    font-size: 18px;
   }
+
 }
 </style>
 </head>
+
 
 <body>
 
 <div class="container">
 
-  <!-- MAIN BOOK -->
-  <div class="card" id="book">
 
-    <div class="heart">♡</div>
+<!-- =========================
+     PASSWORD SCREEN
+========================= -->
 
-    <h1>100 reasons why I love you</h1>
+<div class="card" id="passwordScreen">
 
-    <div class="subtitle">
-      from Mabby, with love ♡
-    </div>
+  <div class="heart">♡</div>
 
-    <div class="reason-number" id="reasonNumber">
-      REASON 01 OF 100
-    </div>
+  <h1>For My Baby ♡</h1>
 
-    <div class="line"></div>
+  <div class="subtitle">
+    A lil something from ur Mabby.
+  </div>
 
-    <textarea
-      id="reasonInput"
-      placeholder="Write your reason here..."
-    ></textarea>
+  <input
+    type="password"
+    id="passwordInput"
+    placeholder="enter the password"
+  >
 
-    <div class="saved" id="savedMessage"></div>
+  <button
+    class="openButton"
+    onclick="checkPassword()"
+  >
+    Open my heart ♡
+  </button>
 
-    <div class="buttons">
+  <div class="error" id="passwordError"></div>
 
-      <button
-        class="back"
-        id="backButton"
-        onclick="previousReason()">
-        ← Back
-      </button>
+</div>
 
-      <button
-        class="next"
-        onclick="nextReason()">
-        Next →
-      </button>
 
-    </div>
 
-    <div class="counter" id="counter">
-      1 / 100
-    </div>
+<!-- =========================
+     VIEWING MODE
+========================= -->
 
-    <div class="footer">
-      Take your time. You don't have to finish everything today. ♡
-    </div>
+<div class="card hidden" id="viewMode">
+
+  <div class="heart">♡</div>
+
+  <div class="reasonNumber" id="viewNumber">
+    REASON 01 OF 100
+  </div>
+
+  <div class="line"></div>
+
+  <div class="reasonText" id="viewReason">
+    ...
+  </div>
+
+  <div class="buttons">
+
+    <button
+      class="back"
+      id="viewBack"
+      onclick="viewPrevious()"
+    >
+      ← Back
+    </button>
+
+    <button
+      class="next"
+      onclick="viewNext()"
+    >
+      Next →
+    </button>
 
   </div>
 
+  <div class="counter" id="viewCounter">
+    1 / 100
+  </div>
 
-  <!-- FINAL PAGE -->
-
-  <div class="card hidden" id="finalPage">
-
-    <div class="heart">♡</div>
-
-    <div class="final">
-
-      <h1>That's all 100. ♡</h1>
-
-      <div class="line"></div>
-
-      <p>
-        But honestly...
-      </p>
-
-      <p>
-        I could probably write a hundred more.
-      </p>
-
-      <p>
-        Thank you for being you, Babu.
-      </p>
-
-      <p>
-        With love,<br>
-        <strong>Mabby</strong> ♡
-      </p>
-
-    </div>
-
+  <div class="footer">
+    ♡ from Mabby
   </div>
 
 </div>
 
 
-<script>
 
-/* -------------------------------------------------
-   SETTINGS
-------------------------------------------------- */
+<!-- =========================
+     EDITING MODE
+========================= -->
 
-const TOTAL_REASONS = 100;
+<div class="card hidden" id="editMode">
 
-/*
-   This is where your reasons are stored.
+  <div class="heart">♡</div>
 
-   localStorage means the reasons stay saved
-   even after you close and reopen the website.
-*/
+  <div class="reasonNumber" id="editNumber">
+    REASON 01 OF 100
+  </div>
 
-const STORAGE_KEY = "mabby_100_reasons";
+  <div class="line"></div>
 
+  <textarea
+    id="reasonInput"
+    placeholder="Write your reason here..."
+  ></textarea>
 
-/* -------------------------------------------------
-   LOAD SAVED REASONS
-------------------------------------------------- */
+  <div class="saved" id="savedMessage"></div>
 
-let reasons = JSON.parse(
-  localStorage.getItem(STORAGE_KEY)
-) || Array(TOTAL_REASONS).fill("");
+  <div class="buttons">
 
-let currentReason = 0;
+    <button
+      class="back"
+      id="editBack"
+      onclick="editPrevious()"
+    >
+      ← Back
+    </button>
 
-
-/* -------------------------------------------------
-   ELEMENTS
-------------------------------------------------- */
-
-const input = document.getElementById("reasonInput");
-const numberText = document.getElementById("reasonNumber");
-const counter = document.getElementById("counter");
-const savedMessage = document.getElementById("savedMessage");
-const backButton = document.getElementById("backButton");
-
-
-/* -------------------------------------------------
-   SHOW CURRENT REASON
-------------------------------------------------- */
-
-function showReason() {
-
-  numberText.textContent =
-    "REASON " +
-    String(currentReason + 1).padStart(2, "0") +
-    " OF 100";
-
-  counter.textContent =
-    (currentReason + 1) + " / 100";
-
-  input.value = reasons[currentReason];
-
-  savedMessage.textContent = "";
-
-  backButton.disabled = currentReason === 0;
-}
-
-
-/* -------------------------------------------------
-   SAVE CURRENT REASON
-------------------------------------------------- */
-
-function saveCurrentReason() {
-
-  reasons[currentReason] = input.value;
-
-  localStorage.setItem(
-    STORAGE_KEY,
-    JSON.stringify(reasons)
-  );
-
-  savedMessage.textContent = "Saved ♡";
-
-}
-
-
-/* -------------------------------------------------
-   AUTO-SAVE WHILE TYPING
-------------------------------------------------- */
-
-input.addEventListener("input", function() {
-
-  saveCurrentReason();
-
-});
-
-
-/* -------------------------------------------------
-   NEXT
-------------------------------------------------- */
-
-function nextReason() {
-
-  saveCurrentReason();
-
-  if (currentReason < TOTAL_REASONS - 1) {
-
-    currentReason++;
-
-    showReason();
-
-  } else {
-
-    document.getElementById("book")
-      .classList.add("hidden");
-
-    document.getElementById("finalPage")
-      .classList.remove("hidden");
-
-  }
-
-}
-
-
-/* -------------------------------------------------
-   BACK
-------------------------------------------------- */
-
-function previousReason() {
-
-  saveCurrentReason();
-
-  if (currentReason > 0) {
-
-    currentReason--;
-
-    showReason();
-
-  }
-
-}
-
-
-/* -------------------------------------------------
-   START
-------------------------------------------------- */
-
-showReason();
-
-</script>
-
-</body>
-</html>
+    <button
+      class="next"
+      onclick="editNext()"
+    >
+      Next →
+    </
