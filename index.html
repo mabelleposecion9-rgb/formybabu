@@ -3,675 +3,110 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>For My Baby ♡</title>
-
 <style>
-* {
-  box-sizing: border-box;
-}
-
-body {
-  margin: 0;
-  min-height: 100vh;
-  padding: 20px;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  background: #f8f4f1;
-  color: #514944;
-
-  font-family: Georgia, "Times New Roman", serif;
-}
-
-.container {
-  width: 100%;
-  max-width: 560px;
-}
-
-.card {
-  background: rgba(255,255,255,0.94);
-
-  border: 1px solid #e7ddd7;
-  border-radius: 25px;
-
-  padding: 38px 28px;
-
-  text-align: center;
-
-  box-shadow:
-    0 12px 35px rgba(80,65,55,0.08);
-}
-
-.hidden {
-  display: none;
-}
-
-.heart {
-  font-size: 30px;
-  color: #b9a095;
-
-  margin-bottom: 12px;
-}
-
-h1 {
-  font-size: 29px;
-  font-weight: 500;
-
-  margin: 0 0 10px;
-}
-
-.subtitle {
-  color: #9b8c84;
-
-  font-size: 15px;
-  line-height: 1.6;
-}
-
-.passwordInput {
-  width: 100%;
-
-  margin-top: 25px;
-  padding: 14px 16px;
-
-  border: 1px solid #ded2cb;
-  border-radius: 14px;
-
-  background: #fffdfb;
-
-  font-family: Georgia, "Times New Roman", serif;
-  font-size: 15px;
-
-  text-align: center;
-
-  outline: none;
-}
-
-.passwordInput:focus {
-  border-color: #bfaea5;
-}
-
-button {
-  border: none;
-  border-radius: 14px;
-
-  padding: 12px 22px;
-
-  font-family: Georgia, "Times New Roman", serif;
-  font-size: 14px;
-
-  cursor: pointer;
-}
-
-.openButton {
-  margin-top: 12px;
-
-  background: #b9a197;
-  color: white;
-}
-
-.error {
-  min-height: 18px;
-
-  margin-top: 10px;
-
-  color: #a46f6f;
-
-  font-size: 12px;
-}
-
-.reasonNumber {
-  font-size: 12px;
-
-  letter-spacing: 2px;
-
-  color: #a4958d;
-
-  margin-bottom: 18px;
-}
-
-.line {
-  width: 45px;
-  height: 1px;
-
-  background: #ded3cd;
-
-  margin: 20px auto;
-}
-
-textarea {
-  width: 100%;
-
-  min-height: 170px;
-
-  resize: vertical;
-
-  padding: 18px;
-
-  border: 1px solid #ded2cb;
-  border-radius: 16px;
-
-  background: #fffdfb;
-
-  color: #514944;
-
-  font-family: Georgia, "Times New Roman", serif;
-
-  font-size: 17px;
-
-  line-height: 1.6;
-
-  outline: none;
-}
-
-textarea:focus {
-  border-color: #bfaea5;
-}
-
-textarea::placeholder {
-  color: #b8ada7;
-}
-
-.saved {
-  height: 18px;
-
-  margin-top: 8px;
-
-  color: #a28e84;
-
-  font-size: 12px;
-}
-
-.buttons {
-  display: flex;
-
-  justify-content: center;
-
-  gap: 10px;
-
-  margin-top: 15px;
-}
-
-.back {
-  background: #eee6e1;
-
-  color: #716760;
-}
-
-.next {
-  background: #b9a197;
-
-  color: white;
-}
-
-button:disabled {
-  opacity: 0.4;
-
-  cursor: not-allowed;
-}
-
-.counter {
-  margin-top: 14px;
-
-  color: #a39892;
-
-  font-size: 12px;
-}
-
-.footer {
-  margin-top: 25px;
-
-  color: #b0a49e;
-
-  font-size: 12px;
-}
-
-.finalText {
-  font-size: 18px;
-
-  line-height: 1.8;
-}
-
-.small {
-  margin-top: 20px;
-
-  font-size: 12px;
-
-  color: #a39892;
-}
-
-
-/* MOBILE */
-
-@media (max-width: 480px) {
-
-  .card {
-    padding: 32px 20px;
-  }
-
-  h1 {
-    font-size: 26px;
-  }
-
-  textarea {
-    font-size: 16px;
-  }
-
-}
+*{box-sizing:border-box}
+body{margin:0;min-height:100vh;display:flex;justify-content:center;align-items:center;background:#fff7f9;font-family:Georgia,serif;color:#5d4148;padding:20px}
+.card{width:min(90%,650px);background:white;padding:45px 35px;border-radius:24px;box-shadow:0 8px 30px rgba(120,70,80,.12);text-align:center}
+h1{font-size:32px;font-weight:normal;margin-top:0}
+.subtitle{color:#a47c85;margin-bottom:30px}
+input{width:100%;max-width:300px;padding:13px 16px;border:1px solid #ead8dc;border-radius:12px;outline:none;font-size:16px;text-align:center}
+button{margin-top:15px;padding:12px 24px;border:0;border-radius:12px;background:#ead0d7;color:#5d4148;font-size:15px;cursor:pointer}
+button:hover{opacity:.85}
+.reason-number{font-size:14px;color:#b18d95;margin-bottom:25px}
+.reason{font-size:22px;line-height:1.7;min-height:150px;display:flex;align-items:center;justify-content:center}
+.navigation{display:flex;justify-content:center;gap:12px;margin-top:25px}
+.navigation button{min-width:110px}
+.back{background:#f3e7ea}
+.final-message{line-height:1.8;font-size:20px}
+.heart{font-size:32px;margin:15px 0}
+footer{margin-top:30px;font-size:14px;color:#b18d95}
+.hidden{display:none}
+.error{color:#b66a78;font-size:14px;margin-top:12px}
 </style>
-
 </head>
-
 <body>
+<div class="card">
 
-<div class="container">
-
-
-<!-- =========================
-     INTRO / PASSWORD
-========================= -->
-
-<div class="card" id="passwordScreen">
-
-  <div class="heart">♡</div>
-
-  <h1>For My Baby ♡</h1>
-
-  <div class="subtitle">
-    A lil something from ur Mabby.
-  </div>
-
-  <input
-    class="passwordInput"
-    id="passwordInput"
-    type="password"
-    placeholder="enter the password"
-  >
-
-  <button
-    class="openButton"
-    onclick="openBook()"
-  >
-    Open my heart ♡
-  </button>
-
-  <div
-    class="error"
-    id="passwordError"
-  ></div>
-
+<div id="passwordScreen">
+<h1>For My Baby ♡</h1>
+<div class="subtitle">A lil something from ur Mabby.</div>
+<input type="password" id="password" placeholder="Enter the password ♡">
+<br>
+<button onclick="unlock()">Open ♡</button>
+<div id="error" class="error"></div>
 </div>
 
-
-
-<!-- =========================
-     EDITING PAGE
-========================= -->
-
-<div
-  class="card hidden"
-  id="book"
->
-
-  <div class="heart">♡</div>
-
-  <div
-    class="reasonNumber"
-    id="reasonNumber"
-  >
-    REASON 01 OF 100
-  </div>
-
-  <div class="line"></div>
-
-
-  <textarea
-    id="reasonInput"
-    placeholder="Write your reason here..."
-  ></textarea>
-
-
-  <div
-    class="saved"
-    id="savedMessage"
-  ></div>
-
-
-  <div class="buttons">
-
-    <button
-      class="back"
-      id="backButton"
-      onclick="previousReason()"
-    >
-      ← Back
-    </button>
-
-
-    <button
-      class="next"
-      onclick="nextReason()"
-    >
-      Next →
-    </button>
-
-  </div>
-
-
-  <div
-    class="counter"
-    id="counter"
-  >
-    1 / 100
-  </div>
-
-
-  <div class="footer">
-    Your reasons save automatically ♡
-  </div>
-
+<div id="reasonsScreen" class="hidden">
+<div class="reason-number" id="reasonNumber"></div>
+<div class="reason" id="reasonText"></div>
+<div class="navigation">
+<button class="back" id="backButton" onclick="previousReason()">← Back</button>
+<button id="nextButton" onclick="nextReason()">Next →</button>
+</div>
+<footer>Take your time, Baby ♡</footer>
 </div>
 
-
-
-<!-- =========================
-     FINISHED PAGE
-========================= -->
-
-<div
-  class="card hidden"
-  id="finishedPage"
->
-
-  <div class="heart">♡</div>
-
-  <div class="finalText">
-
-    <h1>That's all 100. ♡</h1>
-
-    <div class="line"></div>
-
-    <p>
-      But honestly...
-    </p>
-
-    <p>
-      I could probably write<br>
-      a hundred more.
-    </p>
-
-    <p>
-      Thank you for being you, Baby.
-    </p>
-
-    <p>
-      <strong>Mabby</strong> ♡
-    </p>
-
-  </div>
-
+<div id="finalScreen" class="hidden">
+<div class="heart">♡</div>
+<h1>That's all 100. ♡</h1>
+<div class="final-message">
+<p>But I could probably write a hundred more.</p>
+<p>Thank you for being you, Baby.</p>
+<p>For all the memories we've made, all the little moments, and all the years we've spent growing together.</p>
+<p>Here's to all the memories we've already made and all the ones still waiting for us.</p>
+<p><strong>Mabby ♡</strong></p>
+</div>
 </div>
 
-
 </div>
-
-
 
 <script>
-
-/* =====================================================
-   PASSWORD
-===================================================== */
-
-const PASSWORD = "I love you";
-
-
-/* =====================================================
-   NUMBER OF REASONS
-===================================================== */
-
-const TOTAL_REASONS = 100;
-
-
-/* =====================================================
-   STORAGE
-
-   This is where your reasons are saved in your browser.
-===================================================== */
-
-const STORAGE_KEY = "mabby_babu_100_reasons";
-
-
-/* =====================================================
-   LOAD YOUR SAVED REASONS
-===================================================== */
-
-let reasons =
-  JSON.parse(
-    localStorage.getItem(STORAGE_KEY)
-  ) || Array(TOTAL_REASONS).fill("");
-
-
-/* =====================================================
-   CURRENT REASON
-===================================================== */
-
+const finalPassword = "I love you";
+const finalReasons = ["I love you because after all these years, you still feel like my favorite person to come home to.","I love you because we've grown through so many different versions of ourselves, and somehow, we're still here.","I love you because you've seen me on my happiest days and my worst days, and you still know how to make me smile.","I love you because you know parts of me that i dont have to explain anymore.","I love you because even tho you sometimes forget little things i told you, u still trying to remember them, even things i thought you'd forget.","I love you because some of my favorite memories wouldn't exist without you.\n","I love you because we've had conversations that lasted for hours and conversations that were completely ridiculous.","I love you because u can handle my mood swings, we can go from arguing, fixing it, talking about something serious to laughing about something incredibly stupid.","I love you because you won't going to let us sleep hating each other, and you've become part of so many of my everyday thoughts.","I love you because sometimes when sometimes something happens during my day and you're the first person i want to tell.","I love you because you've watched me change and grow over the years.","I love you because i've watched you change and grow too, and i'm proud of the person you've become.","I love you because we've both had moments where we weren't perfect, but we kept learning.","I love you because even after an arguments, a part of me still wants to tell you about my day.","I love you because we've had misunderstandings, disagreements and difficult days, but those moments taught us how to understand each other better.","I love you because you somehow became i can't imagine my life story without.","I love you because you've been there for moments that i'll probably remember for the rest of my life.","I love you because you know my little habits.","I love you because i know yours too.","I love you because we've created our own little language through jokes, memories and random conversation.","I love you because there are things that only you and i would understand.","I love you because one random word or phrase can remind me of something we did hehehehe","I love you because we've collected so many memories without even realizing how important they would become.","I love you because sometimes i look back at old conversations and realize how much we've changed.","I love you because somehow, those old conversations can still make me smile.","I love you because you've made ordinary days memorable.","I love you because even the boring moments became something i enjoyed when you were part of them.","I love you because i don't always need something exciting to happen to enjoy being with you.","I love you because your presence can make a normal day feel different.","I love you because you've seen sides of me the most people never get to see.","I love you because I can be weird around you without constantly worrying about being judged.","I love you because you've seen my emotional side, my mood swings and u didn't give up, you stayed after everything i did.","I love you because you've seen my stubborn side too.","I love you because you've seen me overthinking the smallest things.","I love you because you've learned how to deal with my little moods.","I love you because i've learned yours too.","I love you because we didn't just meet and immediately know everything about each other, we spent years discovering each other.","I love you because there are still things about you that i enjoy discovering.","I love you because even after knowing you for so long, you can still surprise me.","I love you because you've become familiar without ever becoming boring.","I love you because i know the little things that makes you happy.","I love you because i know the things that annoy you.","I love you because i know when something is bothering you even when you don't say it directly.","I love you because you know when something is bothering me too.","I love you because we've learned each other's ways of communicating.","I love you because we fix and still love each other even after arguments.","I love you because we've learned that sometimes love means trying to understand even when it's difficult.","","I love you because i've gotten to witness different chapters of your life.","I love you because you also been part of different chapters of mine.","I love you because when i think about past few years, your name is connected to so many memories.","I love you because sometimes i remember something from years ago and immediately think \" I can't believe we actually did that \".","I love you because we've laughed about things that probably weren't even that funny.","I love you because we've made jokes out of situations that once felt serious.","I love you because we had moments where neither of us knew what to say, but staying connected still mattered.","I love you because even when life got busy, you still have time for me and you remained someone important to me.","I love you because distance or difficult circumstances never erased what we built together.","I love you because we learned how to miss each other.","I love you because missing you reminds me how much your presence means to me.","I love you because i still get excited when i see your name on my screen.","I love you because after all this time, your pictures and your messages can still change my mood.","I love you because there are certain songs that immediately remind me of you.","I love you because there are random places, words, jokes and random little things that will forever remind me of us.","I love you because you become part of my memories in a way that can't simply be erased.","I love you because you know how i usually react to things.","I love you because you know how to make me happy and laugh.","I love you because you know when i'm serious and when i'm just being dramatic.","I love you because you have witnessed so many of my random moments.","I love you because you tolerated my nonsense for years huhuhu","I love you because somehow i have tolerated yours too hahahahahah","I love you because we learned how to laugh at ourselves.","I love you because we aren't some perfect couple with a perfect story.","I love you because our story is ours, with all its beautiful and difficult parts.","I love you because the difficult moments didn't make our memories meaningless.","I love you because the happy moments became even more precious because we knew they wouldn't last forever.","I love you because we learned that relationships aren't only about exciting moments.","I love you because we stayed trough ordinary days too.","I love you because i don't only love the exciting version of us.","I love you because i love the quiet version of us too.","I love you because i love remembering where we started.","I love you because i love seeing how far we've come.","I love you because the younger versions of us had no idea how many memories we will make.","I love you because i get to know a little more about you as times passess.","I love you because the person i fell in love with is still somewhere in you.","I love you because even after we been through, i still find reasons to choose you.","I love you because years ago, i chose you and somehow i still find myself choosing you again and again.","I love you because after spending years together, through all good and bad, the silly, the difficult days and everything in between, i still look at your face and think \"i'm glad it's you\".","I love you because if someone ask me what made these past years special, you be the one of my biggest answers.","I love you because despite know each other for this long, i still get excited about making new memories with you.","I love you because a years that we spending time together is just a number, but to me it's thousands of little moments that we sharedor we going to share.","I love you because you stayed through different version of me and each version somehow gave us another memory to keep.","I love you because even when we have nothing interesting to talk about, i still enjoy having you around.","I love you because we experienced moments that i'll probably still remember when we're much older.","I love you because after almost three years together, you still the person i wanna tell everything to.","I love you because i know there are little things about you that other people might overlook, but after a years together, i learned to notice them.","I love you because i admire the way you handle things that matter to you. Your determination and commitment inspire me more than you probably realize.","I love you because you have dreams, goals and ambitions that are uniquely yours and i love watching you works toward them.","I love you because you taught me lessons that had nothing to do with romance, the lessons, about patients, perspective and understanding.","I love you because even after knowing you for so long, you still your own person. There are still depths to you, thought i haven't heard and parts of your story i'm excited to keep discovering.","I love you because you make me feel included in your world, not because you have to, nut because you choose to share your thoughts, dreams and little plans with me."];
 let currentReason = 0;
 
+function unlock(){
+const entered=document.getElementById("password").value;
+const error=document.getElementById("error");
 
-/* =====================================================
-   OPEN BOOK
-===================================================== */
-
-function openBook() {
-
-  const enteredPassword =
-    document
-      .getElementById("passwordInput")
-      .value;
-
-
-  if (enteredPassword === PASSWORD) {
-
-    document
-      .getElementById("passwordScreen")
-      .classList.add("hidden");
-
-
-    document
-      .getElementById("book")
-      .classList.remove("hidden");
-
-
-    showReason();
-
-  }
-
-  else {
-
-    document
-      .getElementById("passwordError")
-      .textContent =
-      "That's not it, Baby ♡";
-
-  }
-
+if(entered===finalPassword){
+document.getElementById("passwordScreen").classList.add("hidden");
+document.getElementById("reasonsScreen").classList.remove("hidden");
+currentReason=0;
+showReason();
+}else{
+error.textContent="Wrong password, Baby ♡";
+}
 }
 
-
-/* =====================================================
-   SHOW CURRENT REASON
-===================================================== */
-
-function showReason() {
-
-  document
-    .getElementById("reasonNumber")
-    .textContent =
-    "REASON " +
-    String(currentReason + 1).padStart(2, "0") +
-    " OF 100";
-
-
-  document
-    .getElementById("counter")
-    .textContent =
-    (currentReason + 1) +
-    " / 100";
-
-
-  document
-    .getElementById("reasonInput")
-    .value =
-    reasons[currentReason];
-
-
-  document
-    .getElementById("savedMessage")
-    .textContent = "";
-
-
-  document
-    .getElementById("backButton")
-    .disabled =
-    currentReason === 0;
-
+function showReason(){
+document.getElementById("reasonNumber").textContent="Reason "+(currentReason+1)+" of 100";
+document.getElementById("reasonText").textContent=finalReasons[currentReason];
+document.getElementById("backButton").disabled=currentReason===0;
+document.getElementById("nextButton").textContent=currentReason===99?"Finish ♡":"Next →";
 }
 
-
-/* =====================================================
-   SAVE REASON
-===================================================== */
-
-function saveReason() {
-
-  reasons[currentReason] =
-    document
-      .getElementById("reasonInput")
-      .value;
-
-
-  localStorage.setItem(
-    STORAGE_KEY,
-    JSON.stringify(reasons)
-  );
-
-
-  document
-    .getElementById("savedMessage")
-    .textContent =
-    "Saved ♡";
-
+function nextReason(){
+if(currentReason<99){
+currentReason++;
+showReason();
+}else{
+document.getElementById("reasonsScreen").classList.add("hidden");
+document.getElementById("finalScreen").classList.remove("hidden");
+}
 }
 
-
-/* =====================================================
-   AUTO SAVE WHILE TYPING
-===================================================== */
-
-document
-  .getElementById("reasonInput")
-  .addEventListener(
-    "input",
-    function() {
-
-      reasons[currentReason] =
-        this.value;
-
-
-      localStorage.setItem(
-        STORAGE_KEY,
-        JSON.stringify(reasons)
-      );
-
-
-      document
-        .getElementById("savedMessage")
-        .textContent =
-        "Saved ♡";
-
-    }
-  );
-
-
-/* =====================================================
-   NEXT REASON
-===================================================== */
-
-function nextReason() {
-
-  saveReason();
-
-
-  if (
-    currentReason <
-    TOTAL_REASONS - 1
-  ) {
-
-    currentReason++;
-
-    showReason();
-
-  }
-
-  else {
-
-    document
-      .getElementById("book")
-      .classList.add("hidden");
-
-
-    document
-      .getElementById("finishedPage")
-      .classList.remove("hidden");
-
-  }
-
+function previousReason(){
+if(currentReason>0){
+currentReason--;
+showReason();
+}
 }
 
-
-/* =====================================================
-   PREVIOUS REASON
-===================================================== */
-
-function previousReason() {
-
-  saveReason();
-
-
-  if (currentReason > 0) {
-
-    currentReason--;
-
-    showReason();
-
-  }
-
-}
-
-
-/* =====================================================
-   ENTER KEY FOR PASSWORD
-===================================================== */
-
-document
-  .getElementById("passwordInput")
-  .addEventListener(
-    "keydown",
-    function(event) {
-
-      if (event.key === "Enter") {
-
-        openBook();
-
-      }
-
-    }
-  );
-
+document.getElementById("password").addEventListener("keydown",function(e){
+if(e.key==="Enter") unlock();
+});
 </script>
-
 </body>
 </html>
